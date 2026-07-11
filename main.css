@@ -546,3 +546,65 @@ main {
         margin-left: 0;
     }
 }
+
+/* Portfolio atualizado: artes, videos longos e Shorts */
+.section-kicker {
+    margin-bottom: 4px;
+    color: var(--blue) !important;
+    font-size: 13px !important;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.artwork-track {
+    grid-auto-columns: minmax(320px, 1fr);
+}
+
+.artwork-track .carousel-item img {
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
+.video-track {
+    grid-auto-columns: minmax(360px, 1fr);
+}
+
+.video-track .carousel-item.video iframe {
+    aspect-ratio: 16 / 9;
+    height: auto;
+    min-height: 260px;
+}
+
+.shorts-track {
+    grid-auto-columns: minmax(230px, 300px);
+}
+
+.short-video {
+    background: #0b0b0b;
+}
+
+.short-video iframe {
+    aspect-ratio: 9 / 16;
+    height: auto !important;
+    min-height: 500px;
+}
+
+@media (max-width: 600px) {
+    .artwork-track,
+    .video-track {
+        grid-auto-columns: minmax(88%, 1fr);
+    }
+
+    .shorts-track {
+        grid-auto-columns: minmax(78%, 290px);
+    }
+
+    .video-track .carousel-item.video iframe {
+        min-height: 210px;
+    }
+
+    .short-video iframe {
+        min-height: 470px;
+    }
+}
