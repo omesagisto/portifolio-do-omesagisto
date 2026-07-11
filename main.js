@@ -8,16 +8,24 @@ document.querySelectorAll('.carousel').forEach((carousel) => {
     const scrollByCard = () => {
         const firstItem = track.querySelector('.carousel-item');
         if (!firstItem) return 0;
+
         const style = window.getComputedStyle(track);
         const gap = parseFloat(style.columnGap || style.gap || 0);
+
         return firstItem.getBoundingClientRect().width + gap;
     };
 
     prevBtn.addEventListener('click', () => {
-        track.scrollBy({ left: -scrollByCard(), behavior: 'smooth' });
+        track.scrollBy({
+            left: -scrollByCard(),
+            behavior: 'smooth'
+        });
     });
 
     nextBtn.addEventListener('click', () => {
-        track.scrollBy({ left: scrollByCard(), behavior: 'smooth' });
+        track.scrollBy({
+            left: scrollByCard(),
+            behavior: 'smooth'
+        });
     });
 });
